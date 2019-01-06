@@ -1,3 +1,3 @@
 wheel
-django-cleanup
+django_cleanup
 django-bootstrap-form
