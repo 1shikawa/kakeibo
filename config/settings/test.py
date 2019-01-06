@@ -5,7 +5,7 @@ from .base import *
 # Security settings #
 #####################
 
-DEBUG = True
+DEBUG = False
 
 SECRET_KEY = '<fake-secret-key>'
 
