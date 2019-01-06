@@ -11,7 +11,7 @@ class Category(models.Model):
         verbose_name_plural = 'カテゴリ'
 
     # カラムの定義
-    category_name = models.CharField(max_length=255, unique=True)
+    category_name = models.CharField(verbose_name='カテゴリ', max_length=255, unique=True)
 
     # adminサイトで表示される文字列を定義
     def __str__(self):

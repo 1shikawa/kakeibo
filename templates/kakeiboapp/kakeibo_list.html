@@ -44,15 +44,16 @@
                                     <td class="text-center" width="100">{{ item.category }}</td>
                                     <td class="text-center" width="140">{{ item.money }}</td>
                                     <td class="text-center" width="140">{{ item.memo }}</td>
-                                    <
                                     <td class="text-center" width="140">
-                                        <a class="btn btn-primary" href="{% url 'kakeiboapp:kakeibo_update' item.pk %}">更新</a>
-                                        <a class="btn btn-danger" href="{% url 'kakeiboapp:kakeibo_delete' item.pk %}">削除</a>
+                                        <a class="btn btn-primary" href="{% url 'kakeiboapp:kakeibo_update' item.pk %}"
+                                           role="button">更新</a>
+                                        <a class="btn btn-danger" href="{% url 'kakeiboapp:kakeibo_delete' item.pk %}"
+                                           role="button">削除</a>
                                     </td>
                                 </tr>
                             {% endfor %}
                             </tbody>
-                            <!-- ここまでが表のデータ部分の表示-->
+                            　<!-- ここまでが表のデータ部分の表示-->
                         </table>
                         <!-- ここまでがテーブル表の定義 -->
                     </div>
