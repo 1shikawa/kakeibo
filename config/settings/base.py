@@ -32,7 +32,7 @@ INSTALLED_APPS = [
     'django.contrib.humanize',
     # 'accounts.apps.AccountsConfig',
     # 'shop.apps.ShopConfig',
-    # 'django_cleanup',
+    'django_cleanup',
     'bootstrapform',  # django-bootstrap-form
     'kakeiboapp',
 

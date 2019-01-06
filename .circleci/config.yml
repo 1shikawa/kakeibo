@@ -19,7 +19,6 @@ jobs:
           key: deps9-{{ .Branch }}-{{ checksum "Pipfile.lock" }}
       - run:
           command: |
-            sudo pip install -r requirements/test.txt
             sudo pip install pipenv
             pipenv install
       - save_cache:
@@ -30,6 +29,7 @@ jobs:
             - "/usr/local/lib/python3.6/site-packages"
       - run:
           command: |
+            pipenv run "pip install -r requirements/test.txt"
             pipenv run "python manage.py test --settings=config.settings.test"
       - store_test_results:
           path: test-results
