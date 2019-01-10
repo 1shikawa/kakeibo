@@ -51,7 +51,7 @@ def show_circle_graph(request):
     # 全データ取得
     kakeibo_data = Kakeibo.objects.all()
 
-    # すべての金額の合計を求める
+    # 全ての金額の合計を求める
     total = 0
     for item in kakeibo_data:
         total += item.money
@@ -63,11 +63,12 @@ def show_circle_graph(request):
     for item in category_data:
         category_list.append(item.category_name)
 
-    # つづいてカテゴリ毎の合計金額を求める
+    # カテゴリ毎の合計金額を求める
     category_dict = {}
     for i, item in enumerate(category_list):
         category_total = Kakeibo.objects.filter(category__category_name=category_list[i]) \
             .aggregate(sum=Sum('money'))['sum']
+        # カテゴリ毎の割合を求める
         if category_total != None:
             ratio = int((category_total / total) * 100)
             category_dict[item] = ratio

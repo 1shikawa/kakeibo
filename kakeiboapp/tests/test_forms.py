@@ -9,11 +9,25 @@ class KakeiboFormTest(TestCase):
     @classmethod
     def setUpTestData(cls):
         print('kakeiboapp/test_forms_KakeiboFormTest is startred.')
-        Category.objects.create(category_name='カテゴリ1')
 
-    # def test_form(self):
-    #     form_data = {'money': 1000,
-    #                  'category_1': 1,
-    #                     }
-    #     form = KakeiboForm(data=form_data)
-    #     self.assertTrue(form.is_valid())
+    def test_form_is_valid(self):
+        category = Category.objects.create(category_name='食費')
+        form_data = {
+            'money': 1000,
+            'category': category.pk,
+            'memo': '外食',
+            'date': datetime.now()
+        }
+        form = KakeiboForm(data=form_data, instance=category)
+        self.assertTrue(form.is_valid())
+
+    def test_form_is_unvalid(self):
+        category = Category.objects.create(category_name='カテゴリ1')
+        form_data = {
+            'money': '二千円',
+            'date': datetime.now(),
+            'memo': '出張',
+            'category': category.pk
+        }
+        form = KakeiboForm(form_data, instance=category)
+        self.assertFalse(form.is_valid())
