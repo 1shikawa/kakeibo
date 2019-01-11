@@ -1,3 +1,8 @@
 wheel
 django_cleanup
+django-bootstrap4
 django-bootstrap-form
+Django
+pytz
+six
+sqlparse

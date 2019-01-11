@@ -1,8 +1,4 @@
 -r base.txt
 coverage
-Django==2.1.5
-pytz==2018.7
-six==1.12.0
-sqlparse==0.2.4
-unittest-xml-reporting==2.2.0
-xmlrunner==1.7.7
+unittest-xml-reporting
+xmlrunner

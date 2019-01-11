@@ -27,7 +27,7 @@ class KakeiboFormTest(TestCase):
             'money': '二千円',
             'date': datetime.now(),
             'memo': '出張',
-            'category': category.pk
+            'category': category.pk # categoryではない
         }
         form = KakeiboForm(form_data, instance=category)
         self.assertFalse(form.is_valid())

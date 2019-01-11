@@ -25,7 +25,7 @@ urlpatterns = [
     # path('accounts/', include('accounts.urls')),
     path('kakeiboapp/', include('kakeiboapp.urls')),
     # path('', RedirectView.as_view(url='/kakeibo_list')),
-    path('', RedirectView.as_view(url='/kakeiboapp'))
+    path('', RedirectView.as_view(url='/kakeiboapp/kakeibo_list'))
 ]
 # urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
