@@ -17,4 +17,6 @@ urlpatterns = [
     path('delete_done/', views.delete_done, name='delete_done'),
     # カテゴリ別割合の円グラフ
     path('circle/', views.show_circle_graph, name='kakeibo_circle'),
+    # カテゴリ別チャート
+    path('line/', views.show_line_grahp, name='kakeibo_line'),
 ]
